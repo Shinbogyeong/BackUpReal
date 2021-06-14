@@ -1,0 +1,733 @@
+--[개설과정]
+DROP TABLE tblOpenCourse;
+
+CREATE TABLE tblOpenCourse (
+ openCourseSeq number NOT NULL,
+ beginDate date NOT NULL,
+ endDate date NOT NULL,
+ registerCount number NOT NULL,
+ teacherSeq number NOT NULL,
+ totalCourseSeq number NOT NULL,
+ classroomSeq number NOT NULL
+);
+
+CREATE SEQUENCE openCourseSeq;
+
+--[강의가능 과목]
+DROP TABLE tblPossibleSubject;
+
+CREATE TABLE tblPossibleSubject (
+ possibleSubjectseq number NOT NULL,
+ totalSubjectSeq number NOT NULL,
+ teacherSeq number NOT NULL
+);
+
+CREATE SEQUENCE possibleSubjectseq;
+
+--[구인공고]
+DROP TABLE tblJobPost;
+
+CREATE TABLE tblJobPost (
+ jobPostSeq number NOT NULL,
+ recruitField varchar2(20) NOT NULL,
+ companyName varchar2(20) NOT NULL,
+ recruitBegin date NOT NULL,
+ recruitEnd date NOT NULL,
+ career varchar2(20) NOT NULL,
+ educationLevel varchar2(20) NOT NULL,
+ annualIncom number NOT NULL,
+ workArea varchar2(20) NOT NULL,
+ workTime varchar2(20) NOT NULL,
+ selectionCount number NOT NULL
+);
+
+CREATE SEQUENCE jobPostSeq;
+
+--[교사]
+DROP TABLE tblTeacher;
+
+CREATE TABLE tblTeacher (
+ teacherSeq number NOT NULL,
+ name varchar2(15) NOT NULL,
+ ssn varchar2(15) NOT NULL,
+ phoneNumber varchar2(15) NOT NULL,
+ condition varchar2(15) NOT NULL
+);
+
+CREATE SEQUENCE teacherSeq;
+
+--[개설과목]
+DROP TABLE tblOpenSubject;
+
+CREATE TABLE tblOpenSubject (
+ openSubjectSeq number NOT NULL,
+ beginDate date NOT NULL,
+ endDate date NOT NULL,
+ openCourseSeq number NOT NULL,
+ totalSubjectSeq number NOT NULL,
+ period varchar2(20) NOT NULL
+);
+
+CREATE SEQUENCE openSubjectSeq;
+
+--[상담일지]
+DROP TABLE tblCounselingDiary;
+
+CREATE TABLE tblCounselingDiary (
+ counselingDiarySeq number NOT NULL,
+ counselingDate date NULL,
+ content varchar2(1000) NULL,
+ seq number NOT NULL
+);
+
+CREATE SEQUENCE counselingDiarySeq;
+
+--[시험지등록여부]
+DROP TABLE tblRegistrationStatus;
+
+CREATE TABLE tblRegistrationStatus (
+ registrationStatusSeq number NOT NULL,
+ registrationDate date NULL,
+ openSubjectSeq number NOT NULL,
+ condition varchar2(15) NOT NULL
+);
+
+CREATE SEQUENCE registrationStatusSeq;
+
+--[교육생]
+DROP TABLE tblStudent;
+
+CREATE TABLE tblStudent (
+ studentSeq number NOT NULL,
+ name varchar2(20) NOT NULL,
+ phoneNumber varchar2(15) NULL,
+ ssn varchar2(15) NOT NULL,
+ enrollDate date NOT NULL,
+ birth date NOT NULL,
+ condition varchar2(15) NOT NULL,
+ dropDate date NULL
+);
+
+CREATE SEQUENCE studentSeq;
+
+--[전체과정]
+DROP TABLE tblTotalCourse;
+
+CREATE TABLE tblTotalCourse (
+ totalCoureSeq number NOT NULL,
+ name varchar2(15) NOT NULL,
+ period number NOT NULL
+);
+
+CREATE SEQUENCE totalCoureSeq;
+
+--[취업현황]
+DROP TABLE tblEmployment;
+
+CREATE TABLE tblEmployment (
+ employmentSeq number NOT NULL,
+ companyName varchar2(20) NULL,
+ annualIncome number NULL,
+ area varchar2(50) NULL,
+ completeStudentSeq number NOT NULL
+);
+
+CREATE SEQUENCE employmentSeq;
+
+--[성적]
+DROP TABLE tblScore;
+
+CREATE TABLE tblScore (
+ scoreSeq number NOT NULL,
+ hasdwritingScore number NULL,
+ practiceScore number NULL,
+ attendanceScore number NULL,
+ testSeq number NOT NULL
+);
+
+CREATE SEQUENCE scoreSeq;
+
+--[시험문제]
+DROP TABLE tblTestQuestion;
+
+CREATE TABLE tblTestQuestion (
+ testQuestionSeq number NOT NULL,
+ testQusetion varchar2(100) NULL,
+ answer varchar2(100) NULL,
+ registrationStatusSeq number NOT NULL
+);
+
+CREATE SEQUENCE testQuestionSeq;
+
+--[전체교재]
+DROP TABLE tblAllBook;
+
+CREATE TABLE tblAllBook (
+ allBookSeq number NOT NULL,
+ name varchar2(15) NOT NULL,
+ publisher varchar(50) NULL,
+ writer varchar(50) NULL,
+ price number NOT NULL
+);
+
+CREATE SEQUENCE allBookSeq;
+
+--[교사평가]
+DROP TABLE tblTeacherSurvey;
+
+CREATE TABLE tblTeacherSurvey (
+ teacherSurveySeq number NOT NULL,
+ hopeComment varchar2(100) NULL,
+ goodComment varchar2(100) NULL
+);
+
+CREATE SEQUENCE teacherSurveySeq;
+
+--[강의평가]
+DROP TABLE tblCorseSurvey;
+
+CREATE TABLE tblCorseSurvey (
+ courseSurveySeq number NOT NULL,
+ comment varchar2(100) NULL,
+ score number NULL,
+ openSubjectSeq number NOT NULL
+);
+
+CREATE SEQUENCE courseSurveySeq;
+
+--[자격증]
+DROP TABLE tblLicense;
+
+CREATE TABLE tblLicense (
+ licenseSeq number NOT NULL,
+ name varchar2(15) NOT NULL,
+ licenseType varchar2(30) NOT NULL,
+ testAgency varchar2(20) NOT NULL,
+ round varchar2(15) NOT NULL,
+ receptionFee number NOT NULL,
+ writtenRegisterBegin date NOT NULL,
+ writtenRegisterEnd date NOT NULL,
+ writtenTestDate date NOT NULL,
+ writtenResultDate date NOT NULL,
+ submissionBegin date NOT NULL,
+ submissionEnd date NOT NULL,
+ practicalRegisterBegin date NOT NULL,
+ practicalRegisterEnd date NOT NULL,
+ practicalTestDate date NOT NULL,
+ practicalResultDate date NOT NULL
+);
+
+CREATE SEQUENCE licenseSeq;
+
+--[시험]
+DROP TABLE tblTest;
+
+CREATE TABLE tblTest (
+ testSeq number NOT NULL,
+ testDate date NULL,
+ handwritingDistribution number NULL,
+ practiceDistribution number NULL,
+ attendanceDistribution number NULL,
+ openSubjectSeq number NOT NULL,
+ registrationStatusSeq number NOT NULL
+);
+
+CREATE SEQUENCE testSeq;
+
+--[전체과목]
+DROP TABLE tblTotalSubject;
+
+CREATE TABLE tblTotalSubject (
+ totalSubjectSeq number NOT NULL,
+ name varchar2(15) NOT NULL
+);
+
+CREATE SEQUENCE totalSubjectSeq;
+
+--[강의실]
+DROP TABLE tblClassroom;
+
+CREATE TABLE tblClassroom (
+ classroomSeq number NOT NULL,
+ name varchar2(15) NOT NULL,
+ condition varchar2(15) NOT NULL,
+ limitCount number NOT NULL
+);
+CREATE SEQUENCE classroomSeq;
+
+--[출결]
+DROP TABLE tblAttendance;
+
+CREATE TABLE tblAttendance (
+ attendaceSeq number NOT NULL,
+ AttendanceDate date NOT NULL,
+ inTime date NULL,
+ outTime date NULL,
+ condition varchar2(15) NOT NULL
+);
+CREATE SEQUENCE attendaceSeq;
+
+--[강의스케줄]
+DROP TABLE tblLectureSchedule;
+
+CREATE TABLE tblLectureSchedule (
+ lectureScheduleSeq number NOT NULL,
+ condition varchar2(15) NOT NULL,
+ openSubjectSeq number NOT NULL
+);
+CREATE SEQUENCE lectureScheduleSeq;
+
+--[교육종료교육생]
+DROP TABLE tblCompleteStudent;
+
+CREATE TABLE tblCompleteStudent (
+ completeStudentSeq number NOT NULL,
+ name varchar2(15) NOT NULL,
+ completeDate date NOT NULL,
+ condition varchar2(15) NOT NULL,
+ birthDate date NOT NULL,
+ phoneNumber varchar2(15) NULL,
+ enrollmentSeq number NOT NULL
+);
+
+CREATE SEQUENCE completeStudentSeq;
+
+--[사용교재]
+DROP TABLE tblUsedBook;
+
+CREATE TABLE tblUsedBook (
+ usedBookSeq number NOT NULL,
+ totalSubjectSeq number NOT NULL,
+ allBookSeq number NOT NULL
+);
+
+CREATE SEQUENCE usedBookSeq;
+
+--[수강신청]
+DROP TABLE tblEnrollment;
+
+CREATE TABLE tblEnrollment (
+ enrollmentSeq number NOT NULL,
+ attendaceSeq number NOT NULL,
+ counselingDiarySeq number NOT NULL,
+ teacherSurveySeq number NOT NULL,
+ scoreSeq number NOT NULL,
+ courseSurveySeq number NOT NULL,
+ openCourseSeq number NOT NULL,
+ studentSeq number NOT NULL
+);
+
+CREATE SEQUENCE enrollmentSeq;
+
+
+--[관리자]
+DROP TABLE tblManager;
+
+CREATE TABLE tblManager (
+ managerSeq number NOT NULL,
+ managerPW varchar2(15) NOT NULL
+ 
+ 
+);
+
+CREATE SEQUENCE managerSeq;
+
+
+--개설과정
+ALTER TABLE tblOpenCourse ADD CONSTRAINT PK_TBLOPENCOURSE PRIMARY KEY (
+ openCourseSeq
+);
+
+
+--강의가능과목
+ALTER TABLE tblPossibleSubject ADD CONSTRAINT PK_TBLPOSSIBLESUBJECT PRIMARY KEY (
+ possibleSubjectseq
+);
+
+
+--구인공고
+ALTER TABLE tblJobPost ADD CONSTRAINT PK_TBLJOBPOST PRIMARY KEY (
+ jobPostSeq
+);
+
+ALTER TABLE tblJobPost
+    ADD CONSTRAINT CK_TBLJOBPOST_EDUCATIONLEVEL CHECK(educationLevel in('고졸', '대졸', '전문대졸'));
+
+
+
+--교사
+ALTER TABLE tblTeacher ADD CONSTRAINT PK_TBLTEACHER PRIMARY KEY (
+ teacherSeq
+);
+
+ALTER TABLE tblTeacher 
+    ADD CONSTRAINT CK_TBLTEACHER_SSN CHECK(length (ssn) = 7);
+
+ALTER TABLE tblTeacher 
+    ADD CONSTRAINT CK_TBLTEACHER_CONDITION CHECK(condition in ('현직', '대기'));
+
+--
+
+
+--개설과목
+ALTER TABLE tblOpenSubject ADD CONSTRAINT PK_TBLOPENSUBJECT PRIMARY KEY (
+ openSubjectSeq
+);
+
+
+--상담일지
+ALTER TABLE tblCounselingDiary ADD CONSTRAINT PK_TBLCOUNSELINGDIARY PRIMARY KEY (
+ counselingDiarySeq
+);
+
+
+--시험지등록
+ALTER TABLE tblRegistrationStatus ADD CONSTRAINT PK_TBLREGISTRATIONSTATUS PRIMARY KEY (
+ registrationStatusSeq
+);
+
+ALTER TABLE tblRegistrationStatus 
+    ADD CONSTRAINT CK_TBLREGISTRATIONSTATUS_CONDITION CHECK(condition in ('등록','미등록'));
+
+
+
+--교육생
+ALTER TABLE tblStudent ADD CONSTRAINT PK_TBLSTUDENT PRIMARY KEY (
+ studentSeq
+);
+
+ALTER TABLE tblStudent 
+    ADD CONSTRAINT CK_TBLSTUDENT_SSN CHECK(length (ssn) = 7);
+
+ALTER TABLE tblStudent 
+    ADD CONSTRAINT CK_TBLSTUDENT_CONDITION CHECK(condition in('수료중', '중도탈락'));
+
+
+
+--전체과정
+ALTER TABLE tblTotalCourse ADD CONSTRAINT PK_TBLTOTALCOURSE PRIMARY KEY (
+ totalCoureSeq
+);
+
+ALTER TABLE tblTotalCourse 
+    ADD CONSTRAINT CK_TBLTOTALCOURSE_PERIOD CHECK(period in (5.5, 6, 7));
+
+--
+
+
+
+--취업현황
+ALTER TABLE tblEmployment ADD CONSTRAINT PK_TBLEMPLOYMENT PRIMARY KEY (
+ employmentSeq
+);
+
+
+--성적
+ALTER TABLE tblScore ADD CONSTRAINT PK_TBLSCORE PRIMARY KEY (
+ scoreSeq
+);
+
+
+--시험문제
+ALTER TABLE tblTestQuestion ADD CONSTRAINT PK_TBLTESTQUESTION PRIMARY KEY (
+ testQuestionSeq
+);
+
+
+
+--전체교제
+ALTER TABLE tblAllBook ADD CONSTRAINT PK_TBLALLBOOK PRIMARY KEY (
+ allBookSeq
+);
+
+
+--교사평가
+ALTER TABLE tblTeacherSurvey ADD CONSTRAINT PK_TBLTEACHERSURVEY PRIMARY KEY (
+ teacherSurveySeq
+);
+
+
+--강의평가
+ALTER TABLE tblCorseSurvey ADD CONSTRAINT PK_TBLCORSESURVEY PRIMARY KEY (
+ courseSurveySeq
+);
+
+ALTER TABLE tblCorseSurvey 
+    ADD CONSTRAINT CK_TBLCORSESURVEY_SCORE CHECK(score between 1 and 10);
+
+
+
+--자격증
+ALTER TABLE tblLicense ADD CONSTRAINT PK_TBLLICENSE PRIMARY KEY (
+ licenseSeq
+);
+
+ALTER TABLE tblLicense 
+    ADD CONSTRAINT CK_TBLLICENSE_LICENSETYPE CHECK(licenseType in('국가기술자격', '국가전문자격','민간자격'));
+
+
+
+--시험
+ALTER TABLE tblTest ADD CONSTRAINT PK_TBLTEST PRIMARY KEY (
+ testSeq
+);
+
+ALTER TABLE tblTest 
+    ADD CONSTRAINT CK_TBLTEST_ATTENDANCEDISTRIBUTION CHECK (attendanceDistribution >= 20);
+    
+
+ALTER TABLE tblTest 
+    ADD CONSTRAINT CK_TBLTEST_DISTRIBUTION CHECK (attendanceDistribution + practiceDistribution + handwritingDistribution = 100);
+-----
+
+
+--전체과목
+ALTER TABLE tblTotalSubject ADD CONSTRAINT PK_TBLTOTALSUBJECT PRIMARY KEY (
+ totalSubjectSeq
+);
+
+
+
+--강의실
+ALTER TABLE tblClassroom ADD CONSTRAINT PK_TBLCLASSROOM PRIMARY KEY (
+ classroomSeq
+);
+--
+
+
+--출결
+ALTER TABLE tblAttendance ADD CONSTRAINT PK_TBLATTENDANCE PRIMARY KEY (
+ attendaceSeq
+);
+
+ALTER TABLE tblAttendance
+    ADD CONSTRAINT PK_TBLATTENDANCE_CONDITION CHECK(condition in('정상','조퇴','지각','결석','병가','기타', '외출'));
+
+
+
+--강의스케줄
+ALTER TABLE tblLectureSchedule ADD CONSTRAINT PK_TBLLECTURESCHEDULE PRIMARY KEY (
+ lectureScheduleSeq
+);
+
+ALTER TABLE tblLectureSchedule 
+    ADD CONSTRAINT CK_TBLLECTURESCHEDULE_CONDITION CHECK(condition in ('강의예정', '강의중', '강의종료'));
+
+---
+
+
+
+
+--교육종료교육생
+ALTER TABLE tblCompleteStudent ADD CONSTRAINT PK_TBLCOMPLETESTUDENT PRIMARY KEY (
+ completeStudentSeq
+);
+
+ALTER TABLE tblCompleteStudent 
+    ADD CONSTRAINT CK_TBLCOMPLETESTUDENT_CONDITION CHECK(condition in ('중도탈락', '수료완료'));
+
+
+
+--사용교재
+ALTER TABLE tblUsedBook ADD CONSTRAINT PK_TBLUSEDBOOK PRIMARY KEY (
+ usedBookSeq
+);
+
+
+--수강신청
+ALTER TABLE tblEnrollment ADD CONSTRAINT PK_TBLENROLLMENT PRIMARY KEY (
+ enrollmentSeq
+);
+
+
+
+--관리자
+ALTER TABLE tblManager ADD CONSTRAINT PK_TBLMANAGER PRIMARY KEY (
+ managerSeq
+);
+
+----
+
+
+
+ALTER TABLE tblOpenCourse ADD CONSTRAINT FK_tblTeacher_TO_tblOpenCourse FOREIGN KEY (
+ teacherSeq
+)
+REFERENCES tblTeacher (
+ teacherSeq
+);
+
+ALTER TABLE tblOpenCourse ADD CONSTRAINT FK_tblTotalCourse_TO_tblOpenCourse FOREIGN KEY (
+ totalCourseSeq
+)
+REFERENCES tblTotalCourse (
+ totalCoureSeq
+);
+
+ALTER TABLE tblOpenCourse ADD CONSTRAINT FK_tblClassroom_TO_tblOpenCourse FOREIGN KEY (
+ classroomSeq
+)
+REFERENCES tblClassroom (
+ classroomSeq
+);
+
+ALTER TABLE tblPossibleSubject ADD CONSTRAINT FK_tblTotalSubject_TO_tblPossibleSubject FOREIGN KEY (
+ totalSubjectSeq
+)
+REFERENCES tblTotalSubject (
+ totalSubjectSeq
+);
+
+ALTER TABLE tblPossibleSubject ADD CONSTRAINT FK_tblTeacher_TO_tblPossibleSubject FOREIGN KEY (
+ teacherSeq
+)
+REFERENCES tblTeacher (
+ teacherSeq
+);
+
+ALTER TABLE tblOpenSubject ADD CONSTRAINT FK_tblOpenCourse_TO_tblOpenSubject FOREIGN KEY (
+ openCourseSeq
+)
+REFERENCES tblOpenCourse (
+ openCourseSeq
+);
+
+ALTER TABLE tblOpenSubject ADD CONSTRAINT FK_tblTotalSubject_TO_tblOpenSubject FOREIGN KEY (
+ totalSubjectSeq
+)
+REFERENCES tblTotalSubject (
+ totalSubjectSeq
+);
+
+ALTER TABLE tblCounselingDiary ADD CONSTRAINT FK_tblOpenCourse_TO_tblCounselingDiary FOREIGN KEY (
+ seq
+)
+REFERENCES tblOpenCourse (
+ openCourseSeq
+);
+
+ALTER TABLE tblRegistrationStatus ADD CONSTRAINT FK_tblOpenSubject_TO_tblRegistrationStatus FOREIGN KEY (
+ openSubjectSeq
+)
+REFERENCES tblOpenSubject (
+ openSubjectSeq
+);
+
+ALTER TABLE tblEmployment ADD CONSTRAINT FK_tblCompleteStudent_TO_tblEmployment FOREIGN KEY (
+ completeStudentSeq
+)
+REFERENCES tblCompleteStudent (
+ completeStudentSeq
+);
+
+ALTER TABLE tblScore ADD CONSTRAINT FK_tblTest_TO_tblScore FOREIGN KEY (
+ testSeq
+)
+REFERENCES tblTest (
+ testSeq
+);
+
+ALTER TABLE tblTestQuestion ADD CONSTRAINT FK_tblRegistrationStatus_TO_tblTestQuestion FOREIGN KEY (
+ registrationStatusSeq
+)
+REFERENCES tblRegistrationStatus (
+ registrationStatusSeq
+);
+
+ALTER TABLE tblCorseSurvey ADD CONSTRAINT FK_tblOpenSubject_TO_tblCorseSurvey FOREIGN KEY (
+ openSubjectSeq
+)
+REFERENCES tblOpenSubject (
+ openSubjectSeq
+);
+
+ALTER TABLE tblTest ADD CONSTRAINT FK_tblOpenSubject_TO_tblTest FOREIGN KEY (
+ openSubjectSeq
+)
+REFERENCES tblOpenSubject (
+ openSubjectSeq
+);
+
+ALTER TABLE tblTest ADD CONSTRAINT FK_tblRegistrationStatus_TO_tblTest FOREIGN KEY (
+ registrationStatusSeq
+)
+REFERENCES tblRegistrationStatus (
+ registrationStatusSeq
+);
+
+ALTER TABLE tblLectureSchedule ADD CONSTRAINT FK_tblOpenSubject_TO_tblLectureSchedule FOREIGN KEY (
+ openSubjectSeq
+)
+REFERENCES tblOpenSubject (
+ openSubjectSeq
+);
+
+ALTER TABLE tblCompleteStudent ADD CONSTRAINT FK_tblEnrollment_TO_tblCompleteStudent FOREIGN KEY (
+ enrollmentSeq
+)
+REFERENCES tblEnrollment (
+ enrollmentSeq
+);
+
+ALTER TABLE tblUsedBook ADD CONSTRAINT FK_tblTotalSubject_TO_tblUsedBook FOREIGN KEY (
+ totalSubjectSeq
+)
+REFERENCES tblTotalSubject (
+ totalSubjectSeq
+);
+
+ALTER TABLE tblUsedBook ADD CONSTRAINT FK_tblAllBook_TO_tblUsedBook FOREIGN KEY (
+ allBookSeq
+)
+REFERENCES tblAllBook (
+ allBookSeq
+);
+
+ALTER TABLE tblEnrollment ADD CONSTRAINT FK_tblAttendance_TO_tblEnrollment FOREIGN KEY (
+ attendaceSeq
+)
+REFERENCES tblAttendance (
+ attendaceSeq
+);
+
+ALTER TABLE tblEnrollment ADD CONSTRAINT FK_tblCounselingDiary_TO_tblEnrollment FOREIGN KEY (
+ counselingDiarySeq
+)
+REFERENCES tblCounselingDiary (
+ counselingDiarySeq
+);
+
+ALTER TABLE tblEnrollment ADD CONSTRAINT FK_tblTeacherSurvey_TO_tblEnrollment FOREIGN KEY (
+ teacherSurveySeq
+)
+REFERENCES tblTeacherSurvey (
+ teacherSurveySeq
+);
+
+ALTER TABLE tblEnrollment ADD CONSTRAINT FK_tblScore_TO_tblEnrollment FOREIGN KEY (
+ scoreSeq
+)
+REFERENCES tblScore (
+ scoreSeq
+);
+
+ALTER TABLE tblEnrollment ADD CONSTRAINT FK_tblCorseSurvey_TO_tblEnrollment FOREIGN KEY (
+ courseSurveySeq
+)
+REFERENCES tblCorseSurvey (
+ courseSurveySeq
+);
+
+ALTER TABLE tblEnrollment ADD CONSTRAINT FK_tblOpenCourse_TO_tblEnrollment FOREIGN KEY (
+ openCourseSeq
+)
+REFERENCES tblOpenCourse (
+ openCourseSeq
+);
+
+ALTER TABLE tblEnrollment ADD CONSTRAINT FK_tblStudent_TO_tblEnrollment FOREIGN KEY (
+ studentSeq
+)
+REFERENCES tblStudent (
+ studentSeq
+);

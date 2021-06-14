@@ -1,0 +1,64 @@
+1. JDK & JRE 설치
+2. 환경 변수 등록
+3. PATH 설정
+4. 예제 만들기 & 실행
+
+JDK, Java Development Kit, 자바 개발 도구
+- JDK 1.0~ 1.16
+- JAVA 1 ~ 16 (위랑 같은 말)
+- JDK 1.8 설치 (수업)// 1.8이 메인~ 그리고 11버전으로 가는즁
+- 프로그램 소스 -> 프로그램 실행 파일
+- 개발에 필요한 기능들을 제공하는 도구 모음(프로그램의 집합)
+
+JRE. Java Runtime Environment, 자바 실행 환경
+- 자바로 만든 프로그램이 실행할 수 있는 여러가지 환경을 제공
+- JRE 1.8 //보통 JDK와 JRE같은 버전 씀
+
+[사람]
+Hello.java
+-  소스파일
+- 프로그래밍 구문(소스)을 적어놓은 파일
+- 확장자(.java)
+- 포맷(텍스트 파일.txt)
+- 프로그래밍 구문 -> 자바 언어로 구성 - > 수많은 명령어들의 집합 -> 컴퓨터가 실행해야 할 명령어들의 집합
+
+Compile, 컴파일
+- 프로그램 소스를 기계어(이진코드//101010)로 번역하는 작업
+- Compiler, 컴파일러 : 번역하는 전문 프로그램
+- java Compiler -> JDK내에 포함 -> javac.exe
+- 사용법 
+  > javac.exe 자바소스파일명(경로)
+  > javac.exe Hello.java
+- 컴파일의 결과물 : 번역을 마친 번역본(기계어로 되어 있는 파일)-> Hello.class(클래스 파일 & 실행파일)
+
+
+Hello.class
+- 클래스 파일
+- 자바가 아닌 다른 언어들은 이 파일이 기계어(0,1)로 번역되어있다.
+- 최근 언어(자바, C# 등) 들은 이 결과물이 중간 언어(IL)로 번역되어있다. 
+**자바는 번역을 2번한다.
+-1차 컴파일 
+-2차 컴파일
+
+
+Hello.class -> 기계어로 번역
+-java.exe
+-java.exe 클래스명
+-java.exe Hello// public class Hello할 때 Hello임 파일확장자쓰면 안됨 // Hwllo.class 번역본의 내용을 진짜 기계어로 번역하고,,, 번역된 기계어를 실행까지 한다 -즉 번역 결과는 남기지 않는다.(번역복 안만든다)
+
+
+Hello.java-> 1차번역(javac.exe)-> Hello.class(산출물)->2차번역(java.exe)->X, 실행// eclips가 1,2차 바로 실행시켜줌
+
+
+[명령어 실행 주체]
+- 컴퓨터
+  - CPU (연산 장치) : 프로그램의 명령어들을 실행시키는 역할
+  - RAM, Memory (주 기억 장치)
+  - HDD, SDD (보조 기억 장치)
+  - Graphic card (GPU..)
+  - NIC (LAN card)
+  - power
+  - MainBorad
+
+- CPU
+  - 처리가능한 데이터의 형태 : 0,1 (전기 신호) ->바이너리(Binary Data), 이진 데이터
