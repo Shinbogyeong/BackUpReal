@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {
+            margin: 0 auto;
+        }
+
+        h1 {
+            width: 800px;
+            font-family: Verdana;
+            font-variant: small-caps;
+            color: #444444;
+            font-size: 32px;
+            border-bottom: 1px dashed #444444;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        small {
+            float: right;
+        }
+
+        table{
+            width: 800px;
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th {
+            border: 1px solid #ccc;
+            background-color: #ddd;
+            font-family: Verdana;
+        }
+
+
+        th, td{
+            border: 1px solid #ccc;
+            text-align: center;
+            color: #444;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        td.des {
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .th1 {
+            width: 50px;
+        }
+
+        .th2 {
+            width: 80px;
+        }
+
+        .th3{
+            width: 50px;
+        }
+
+        .th4{
+            width: 100px;
+        }
+
+        .th5{
+            width: 520px;
+        }
+
+        #tbl1 #color {
+            color: #6495ED;
+        }
+
+        #tbl2 #color{
+            color: #ffd700;
+        }
+
+        #tbl2 tr:nth-child(odd) {
+            background-color: #EEEEEE;
+        }
+
+        #tbl3 #color{
+            color: #C792EA;
+        }
+
+        #tbl3 table {
+            border: 0px;
+        }
+
+        #tbl3 th {
+            border: 0px;
+            border-bottom: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+        }
+
+        #tbl3 td {
+            border: 0px;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        #tbl4 #color{
+            color: #73B5AF;
+        }
+        
+        #tbl4 table {
+            border: 0px;
+            border-collapse: inherit;
+            border: 0px solid #ccc;
+        }
+
+        #tbl4 th {
+            border: 0px;
+            border: 1px solid #ccc;
+        }
+
+        #tbl4 td {
+            border: 0px;
+            border: 1px solid #ccc;
+            border-right: 0px;
+        }
+
+        #tbl3 td #des {
+            border-right: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex38_table.html -->
+    <section id="tbl1">
+        <h1><span id="color">M</span>ember list<small>Table Design</small></h1>
+        <table>
+            <tr>
+                <th class="th1">No</th>
+                <th class="th2">Name</th>
+                <th class="th3">Age</th>
+                <th class="th4">ID</th>
+                <th class="th5">Description</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Lorem</td>
+                <td>21</td>
+                <td>Lorem</td>
+                <td class="des">Lorem ipsum dolor sit amet</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>Magni</td>
+                <td>22</td>
+                <td>Facere</td>
+                <td class="des">Obcaecati accusamus perspiciatis nesciunt corporis</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>Nam</td>
+                <td>23</td>
+                <td>Laudantium</td>
+                <td class="des">Ipsa nam molestiae ea obcaecati</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>Beatae</td>
+                <td>24</td>
+                <td>Esse</td>
+                <td class="des">Repellat expedita dolorum autem architecto</td>
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>Placeat</td>
+                <td>25</td>
+                <td>Itaque</td>
+                <td class="des">Soluta eaque nam nemo enim</td>
+            </tr>
+            <tr>
+                <td>06</td>
+                <td>Eligendi</td>
+                <td>26</td>
+                <td>Velit</td>
+                <td class="des">Dolores, unde ratione Ab, natus</td>
+            </tr>
+            <tr>
+                <td>07</td>
+                <td>Labore</td>
+                <td>27</td>
+                <td>Doloribus</td>
+                <td class="des">Voluptas aperiam ratione suscipit cumque</td>
+            </tr>
+            <tr>
+                <td>08</td>
+                <td>Ducimus</td>
+                <td>28</td>
+                <td>Ea</td>
+                <td class="des">Distinctio possimus neque quisquam asperiores</td>
+            </tr>
+            <tr>
+                <td>09</td>
+                <td>Et</td>
+                <td>29</td>
+                <td>Nostrum</td>
+                <td class="des">Architecto eos odit dignissimos similique</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Saepe</td>
+                <td>21</td>
+                <td>Voluptatibus</td>
+                <td class="des">Unde, aliquid Deleniti, quae mollitia</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="tbl2">
+        <h1><span id="color">M</span>ember list<small>Table Design</small></h1>
+        <table>
+            <tr>
+                <th class="th1">No</th>
+                <th class="th2">Name</th>
+                <th class="th3">Age</th>
+                <th class="th4">ID</th>
+                <th class="th5">Description</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Lorem</td>
+                <td>21</td>
+                <td>Lorem</td>
+                <td class="des">Lorem ipsum dolor sit amet</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>Magni</td>
+                <td>22</td>
+                <td>Facere</td>
+                <td class="des">Obcaecati accusamus perspiciatis nesciunt corporis</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>Nam</td>
+                <td>23</td>
+                <td>Laudantium</td>
+                <td class="des">Ipsa nam molestiae ea obcaecati</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>Beatae</td>
+                <td>24</td>
+                <td>Esse</td>
+                <td class="des">Repellat expedita dolorum autem architecto</td>
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>Placeat</td>
+                <td>25</td>
+                <td>Itaque</td>
+                <td class="des">Soluta eaque nam nemo enim</td>
+            </tr>
+            <tr>
+                <td>06</td>
+                <td>Eligendi</td>
+                <td>26</td>
+                <td>Velit</td>
+                <td class="des">Dolores, unde ratione Ab, natus</td>
+            </tr>
+            <tr>
+                <td>07</td>
+                <td>Labore</td>
+                <td>27</td>
+                <td>Doloribus</td>
+                <td class="des">Voluptas aperiam ratione suscipit cumque</td>
+            </tr>
+            <tr>
+                <td>08</td>
+                <td>Ducimus</td>
+                <td>28</td>
+                <td>Ea</td>
+                <td class="des">Distinctio possimus neque quisquam asperiores</td>
+            </tr>
+            <tr>
+                <td>09</td>
+                <td>Et</td>
+                <td>29</td>
+                <td>Nostrum</td>
+                <td class="des">Architecto eos odit dignissimos similique</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Saepe</td>
+                <td>21</td>
+                <td>Voluptatibus</td>
+                <td class="des">Unde, aliquid Deleniti, quae mollitia</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="tbl3">
+        <h1><span id="color">M</span>ember list<small>Table Design</small></h1>
+        <table>
+            <tr>
+                <th class="th1">No</th>
+                <th class="th2">Name</th>
+                <th class="th3">Age</th>
+                <th class="th4">ID</th>
+                <th class="th5">Description</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Lorem</td>
+                <td>21</td>
+                <td>Lorem</td>
+                <td class="des">Lorem ipsum dolor sit amet</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>Magni</td>
+                <td>22</td>
+                <td>Facere</td>
+                <td class="des">Obcaecati accusamus perspiciatis nesciunt corporis</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>Nam</td>
+                <td>23</td>
+                <td>Laudantium</td>
+                <td class="des">Ipsa nam molestiae ea obcaecati</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>Beatae</td>
+                <td>24</td>
+                <td>Esse</td>
+                <td class="des">Repellat expedita dolorum autem architecto</td>
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>Placeat</td>
+                <td>25</td>
+                <td>Itaque</td>
+                <td class="des">Soluta eaque nam nemo enim</td>
+            </tr>
+            <tr>
+                <td>06</td>
+                <td>Eligendi</td>
+                <td>26</td>
+                <td>Velit</td>
+                <td class="des">Dolores, unde ratione Ab, natus</td>
+            </tr>
+            <tr>
+                <td>07</td>
+                <td>Labore</td>
+                <td>27</td>
+                <td>Doloribus</td>
+                <td class="des">Voluptas aperiam ratione suscipit cumque</td>
+            </tr>
+            <tr>
+                <td>08</td>
+                <td>Ducimus</td>
+                <td>28</td>
+                <td>Ea</td>
+                <td class="des">Distinctio possimus neque quisquam asperiores</td>
+            </tr>
+            <tr>
+                <td>09</td>
+                <td>Et</td>
+                <td>29</td>
+                <td>Nostrum</td>
+                <td class="des">Architecto eos odit dignissimos similique</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Saepe</td>
+                <td>21</td>
+                <td>Voluptatibus</td>
+                <td class="des">Unde, aliquid Deleniti, quae mollitia</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="tbl4">
+        <h1><span id="color">M</span>ember list<small>Table Design</small></h1>
+        <table>
+            <tr>
+                <th class="th1">No</th>
+                <th class="th2">Name</th>
+                <th class="th3">Age</th>
+                <th class="th4">ID</th>
+                <th class="th5">Description</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>Lorem</td>
+                <td>21</td>
+                <td>Lorem</td>
+                <td class="des">Lorem ipsum dolor sit amet</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>Magni</td>
+                <td>22</td>
+                <td>Facere</td>
+                <td class="des">Obcaecati accusamus perspiciatis nesciunt corporis</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>Nam</td>
+                <td>23</td>
+                <td>Laudantium</td>
+                <td class="des">Ipsa nam molestiae ea obcaecati</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>Beatae</td>
+                <td>24</td>
+                <td>Esse</td>
+                <td class="des">Repellat expedita dolorum autem architecto</td>
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>Placeat</td>
+                <td>25</td>
+                <td>Itaque</td>
+                <td class="des">Soluta eaque nam nemo enim</td>
+            </tr>
+            <tr>
+                <td>06</td>
+                <td>Eligendi</td>
+                <td>26</td>
+                <td>Velit</td>
+                <td class="des">Dolores, unde ratione Ab, natus</td>
+            </tr>
+            <tr>
+                <td>07</td>
+                <td>Labore</td>
+                <td>27</td>
+                <td>Doloribus</td>
+                <td class="des">Voluptas aperiam ratione suscipit cumque</td>
+            </tr>
+            <tr>
+                <td>08</td>
+                <td>Ducimus</td>
+                <td>28</td>
+                <td>Ea</td>
+                <td class="des">Distinctio possimus neque quisquam asperiores</td>
+            </tr>
+            <tr>
+                <td>09</td>
+                <td>Et</td>
+                <td>29</td>
+                <td>Nostrum</td>
+                <td class="des">Architecto eos odit dignissimos similique</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Saepe</td>
+                <td>21</td>
+                <td>Voluptatibus</td>
+                <td class="des">Unde, aliquid Deleniti, quae mollitia</td>
+            </tr>
+        </table>
+    </section>
+
+</body>
+</html>

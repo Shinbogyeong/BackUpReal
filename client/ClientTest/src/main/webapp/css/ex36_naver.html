@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #weather {
+            border: 1px solid #eaeef3;
+            width: 691px;
+            /* margin-right: -1px; */
+            
+        }
+
+        #weather header {
+            color: #242424;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+
+        #weather .item{
+            /* border: 1px solid black; */
+            border-right: 1px solid #eaeef3;
+            float: left;
+            margin-top: 20px;
+            margin-left: 40px;
+            margin-bottom: 20px;
+            padding-right: 40px;
+            text-align: center;
+            
+        }
+
+        #weather .item.last {
+            border-right: 0px;
+        }
+
+        
+        #weather .date .datestate.today {
+            display: inline-block;
+            width: 30px;
+            /* border:1px solid black; */
+            margin-bottom: 20px;
+            background-color: #00C63C;
+            background-image: url(images/btn_dday.png);
+            /* background-image: url(images/bullet01.png); */
+            background-size: 100% 100%;
+            
+            /* background-: 16px 200px; */
+            color: #ffffff;
+        }
+        
+
+        #weather .date {
+            /* border:1px solid black; */
+            margin-bottom: 20px;
+        }
+
+        #weather .date .datreal {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        #weather .date .datestate {
+             font-size: 13px;
+             color: #999;
+        }
+
+        #weather .AM span , #weather .PM span{
+            display: block;
+            float: left;
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #999
+        }
+
+        #weather .AM .icon img, #weather .PM .icon img{
+            /* border:1px solid black; */
+            width: 30px;
+            margin-right: 10px;
+            margin-left: -10px;
+        }
+
+       
+        #weather .AM span.rain, #weather .PM span.rain {
+            color: #73B9FF;
+        }
+
+
+        
+        #weather .temperature{
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="weather">
+        <header>주간날씨</header>
+        <div class="item">
+            <div class="date">
+                <span class="datreal">목</span>
+                <span class="datestate today">오늘</span>
+            </div>
+            <div class="AM">
+                <span class="icon"><img src="images/icon_wt_22.svg"></span>
+                <span class="prob rain">70%</span>
+            </div>
+            <div class="PM">
+                <span class="icon"><img src="images/icon_wt_22.svg"></span>
+                <span class="prob rain">60%</span>
+            </div>
+            <div class="temperature">21°/25°</div>
+        </div>
+        <div class="item">
+            <div class="date">
+                <span class="datreal">금</span>
+                <span class="datestate">내일</span>
+            </div>
+            <div class="AM">
+                <span class="icon"><img src="images/icon_wt_22.svg"></span>
+                <span class="prob rain">60%</span>
+            </div>
+            <div class="PM">
+                <span class="icon"><img src="images/icon_wt_07.svg"></span>
+                <span class="prob">30%</span>
+            </div>
+            <div class="temperature">21°/28°</div>
+        </div>
+        <div class="item">
+            <div class="date">
+                <span class="datreal">토</span>
+                <span class="datestate">모레</span>
+            </div>
+            <div class="AM">
+                <span class="icon"><img src="images/icon_wt_07.svg"></span>
+                <span class="prob">30%</span>
+            </div>
+            <div class="PM">
+                <span class="icon"><img src="images/icon_wt_05.svg"></span>
+                <span class="prob">30%</span>
+            </div>
+            <div class="temperature">21°/29°</div>
+        </div>
+        <div class="item">
+            <div class="date">
+                <span class="datreal">일</span>
+                <span class="datestate">6.28.</span>
+            </div>
+            <div class="AM">
+                <span class="icon"><img src="images/icon_wt_05.svg"></span>
+                <span class="prob">30%</span>
+            </div>
+            <div class="PM">
+                <span class="icon"><img src="images/icon_wt_09.svg"></span>
+                <span class="prob rain">60%</span>
+            </div>
+            <div class="temperature">21°/31°</div>
+        </div>
+        <div class="item last">
+            <div class="date">
+                <span class="datreal">월</span>
+                <span class="datestate">6.29.</span>
+            </div>
+            <div class="AM">
+                <span class="icon"><img src="images/icon_wt_05.svg"></span>
+                <span class="prob">30%</span>
+            </div>
+            <div class="PM">
+                <span class="icon"><img src="images/icon_wt_09.svg"></span>
+                <span class="prob rain">60%</span>
+            </div>
+            <div class="temperature">21°/29°</div>
+        </div>
+        
+        <div style="clear: both;"></div>
+    </div>
+</body>
+</html>
