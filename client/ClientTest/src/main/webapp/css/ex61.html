@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #main {
+            margin: 0 auto;
+            margin-top: 50px;
+            width: 1400px;
+            height: 750px;
+            /* position: absolute; */
+        }
+
+        .box {
+            height: 149px;
+            border: 1px solid black;
+            margin-top: -1px;
+            position: relative;
+        }
+
+      
+        .inbox {
+            width: 100px;
+            height: 100px;
+            /* background-color: red; */
+            border: 1px solid black;
+            text-align: center;
+            font-size: 4.4em;
+            border-radius: 50%;
+            font-weight: bold;
+            position: absolute;
+            bottom: 0;
+            transition: all 5s;
+        }
+
+        
+
+        #inbox1 {background-color: tomato; transition: all 7s;}
+        #inbox2 {background-color: gold; transition: all 4s;}
+        #inbox3 {background-color: orange;}
+        #inbox4 {background-color: greenyellow; transition: all 8s;}
+        #inbox5 {background-color: cornflowerblue; transition: all 4.5s;}
+
+        #box1:hover > #inbox1{
+            transform:  translate(1290px, 0) rotate(3600deg) ;
+        }
+        
+        #box2:hover > #inbox2{
+            transform:  translate(1290px, 0) rotate(3600deg) ;
+        }
+
+        #box3:hover > #inbox3{
+            transform:  translate(1290px, 0) rotate(3600deg) ;
+        }
+
+        #box4:hover > #inbox4{
+            transform:  translate(1290px, 0) rotate(3600deg) ;
+        }
+
+        #box5:hover > #inbox5{
+            transform:  translate(1290px, 0) rotate(3600deg) ;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="box1" class="box">
+            <div id="inbox1" class="inbox">A</div>
+        </div>
+        <div id="box2" class="box">
+            <div id="inbox2" class="inbox">B</div>
+        </div>
+        <div id="box3" class="box">
+            <div id="inbox3" class="inbox">C</div>
+        </div>
+        <div id="box4" class="box">
+            <div id="inbox4" class="inbox">D</div>
+        </div>
+        <div id="box5" class="box">
+            <div id="inbox5" class="inbox">E</div>
+        </div>
+    </div>
+</body>
+</html>

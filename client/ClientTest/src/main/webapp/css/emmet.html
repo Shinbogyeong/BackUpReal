@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- emmit.html -->
+
+    <!-- 
+
+        Emmet, Zen-Coding
+        - 대다수 프로그램 편집기가 이 기능을 지원
+        - CSS 선택자를 사용해서 HTML/CSS 코드를 빠르게 작성하는 기능
+        - http://emmet.io
+
+     -->
+
+        <!-- 태그 선택자 -->
+
+        div {}
+
+        <div></div>
+        <div></div>
+
+        p
+        <p></p>
+
+        a
+        <a href="test.htm">링크</a>
+
+        img
+        <img src="images/catty01.png" alt="고양이">
+
+        input
+        <input type="text">
+
+        <!-- ID 선택자 -->
+        div#box1 {}
+        <div id="box1"></div>
+
+        div#box1
+        <div id="box1"></div>
+
+        input#txtName
+        <input type="text" id="txtName">
+
+        h1#title
+        <h1 id="title"></h1>
+
+        <div id="test"></div>
+
+
+        <!-- class 선택자 -->
+        div.item
+        <div class="item"></div>
+
+        img.pet
+        <img src="" alt="" class="pet">
+
+        div.one.two
+        <div class="one two"></div>
+
+        input#txtName.txt.red
+        <input type="text" id="txtName" class="txt red">
+
+
+        <!-- 속성 선택자 -->
+        div[title]
+        <div title=""></div>
+
+        div[title=상자]
+        <div title="상자"></div>
+
+        img[width height]
+        <img src="" alt="" width="" height="">
+
+        <!-- PCDATA(CSS X) -->
+        div{상자}
+        <div>상자</div>
+
+        h1{제목입니다.}
+        <h1>제목입니다.</h1>
+
+        div#box1.box[title=상자입니다.]{상자}
+        <div id="box1" class="box" title="상자입니다.">상자</div>
+
+
+        <!-- 반복 기능 -->
+        div*5
+        <div>ds</div>
+        <div>sd</div>
+        <div>sd</div>
+        <div>sd</div>
+        <div>ff</div>
+
+        div{상자입니다.}*5
+        <div>상자입니다.</div>
+        <div>상자입니다.</div>
+        <div>상자입니다.</div>
+        <div>상자입니다.</div>
+        <div>상자입니다.</div>
+
+        div.box*5
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+
+        div.box[title=상자]{상자입니다.}*5
+        <div class="box" title="상자">상자입니다.</div>
+        <div class="box" title="상자">상자입니다.</div>
+        <div class="box" title="상자">상자입니다.</div>
+        <div class="box" title="상자">상자입니다.</div>
+        <div class="box" title="상자">상자입니다.</div>
+
+        div#box$*5
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="box3"></div>
+        <div id="box4"></div>
+        <div id="box5"></div>
+
+        div#box$.box{상자$}*3
+        <div id="box1" class="box">상자1</div>
+        <div id="box2" class="box">상자2</div>
+        <div id="box3" class="box">상자3</div>
+
+        div{상자$$}*20
+        <div>상자01</div>
+        <div>상자02</div>
+        <div>상자03</div>
+        <div>상자04</div>
+        <div>상자05</div>
+        <div>상자06</div>
+        <div>상자07</div>
+        <div>상자08</div>
+        <div>상자09</div>
+        <div>상자10</div>
+        <div>상자11</div>
+        <div>상자12</div>
+        <div>상자13</div>
+        <div>상자14</div>
+        <div>상자15</div>
+        <div>상자16</div>
+        <div>상자17</div>
+        <div>상자18</div>
+        <div>상자19</div>
+        <div>상자20</div>
+
+
+        <!-- 형제 선택자 -->
+        a~b: X
+        a+b: O
+
+        h1+p
+        <h1></h1>
+        <p></p>
+
+        h1+p*5
+        <h1></h1>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+
+        (h1+p)*5
+        <h1></h1>
+        <p></p>
+        <h1></h1>
+        <p></p>
+        <h1></h1>
+        <p></p>
+        <h1></h1>
+        <p></p>
+        <h1></h1>
+        <p></p>
+
+        h1#title{HTML}+p.desc*3
+        <h1 id="title">HTML</h1>
+        <p class="desc"></p>
+        <p class="desc"></p>
+        <p class="desc"></p>
+
+        <!-- 자식 선택자 -->
+        a b: X
+        a>b: O
+
+        div>span
+        <div><span></span></div>
+
+        ul>li
+        <ul>
+            <li></li>
+        </ul>
+
+        ul#list1>li.item{항목$}*5
+        <ul id="list1">
+            <li class="item">항목1</li>
+            <li class="item">항목2</li>
+            <li class="item">항목3</li>
+            <li class="item">항목4</li>
+            <li class="item">항목5</li>
+        </ul>
+
+        h1#title{할일}+ul#list1>li.item{항목$}*5
+        <h1 id="title">할일</h1>
+        <ul id="list1">
+            <li class="item">항목1</li>
+            <li class="item">항목2</li>
+            <li class="item">항목3</li>
+            <li class="item">항목4</li>
+            <li class="item">항목5</li>
+        </ul>
+
+        table>tr*10>td*5
+
+        table#table1.table.medium.padding5>tr*20>td.cell${항목}*5
+
+
+        div>lorem
+        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae dolores dolore, accusantium rerum aspernatur veritatis! Quos ea quidem quas rem itaque mollitia et! Sed nesciunt laborum excepturi quis totam officia.</div>
+
+        div>lorem3
+        <div>Lorem ipsum dolor sit.</div>
+
+        (h1>lorem5)+(p>lorem50)*3
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, numquam odit voluptas excepturi hic explicabo autem sed. Minima amet provident tempore magni deserunt nisi exercitationem labore numquam explicabo voluptatum veniam iste consequuntur, cum nostrum corporis et alias sequi voluptas deleniti nulla, enim inventore. Laborum iure distinctio quos, in asperiores eos.</p>
+        <p>Voluptatibus iste nihil, a enim tempora molestias unde nesciunt earum labore esse ratione, libero architecto aliquam, corrupti quas. Odit commodi neque a eos officia pariatur harum eum quidem dolorum? Beatae, amet assumenda at culpa sapiente voluptates iure minima voluptate ab! Repellendus enim quisquam tempore et. In quibusdam molestiae voluptatum rem?</p>
+        <p>Tempore commodi suscipit maiores eum dicta laboriosam nesciunt voluptatem exercitationem. Laboriosam excepturi sit, sequi nulla, unde nostrum repellat maiores debitis quae rem culpa aliquam adipisci tempore eveniet quas voluptate, ad commodi voluptates. Voluptates eum unde impedit consequatur, nulla dolor! Cumque voluptates accusamus totam eius molestias ex ab repellat earum nobis!</p>
+
+</body>
+</html>

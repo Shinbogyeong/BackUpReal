@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #8FD1D8;
+        }
+        
+        h1{
+            font-variant: small-caps;
+            color: #555;
+            font-size: 3em;
+        }
+
+        #main {
+            position: relative;
+            width: 570px;
+            margin: 0 auto;
+        }
+
+        #tape {
+            z-index: 1;
+        }
+
+        .tapehole {
+            position: absolute;
+            top: 215px;
+
+            animation-name: turn;
+            animation-iteration-count: infinite;
+            animation-duration: 1.5s;
+            animation-timing-function: linear;
+        }
+
+        @keyframes turn {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #tapehole1 {
+            left: 125px;
+            z-index: 2;
+        }
+
+        #tapehole2 {
+            left: 362px;
+            z-index: 2;
+        }
+
+        #tapeline {
+            position: absolute;
+            width: 133px;
+            height: 64px;
+            left: 217px;
+            top: 223px;
+            /* border: 1px solid black; */
+
+            background-image: url(images/tapeline.png);
+            background-position: center;
+            
+            animation-name: line;
+            animation-duration: s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+        }
+
+        @keyframes line {
+            0% {
+                background-position: center;
+            }
+            50% {
+                background-position: left;
+            }
+            100% {
+                background-position: right;
+            }
+
+        
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex73.html -->
+    <div id="main">
+        <h1>Music</h1>
+        <img src="images/tape.png" id="tape">
+        <img src="images/tapehole.png" id="tapehole1" class="tapehole">
+        <img src="images/tapehole.png" id="tapehole2" class="tapehole">
+        <!-- <img src="images/tapeline.png" id="tapeline"> -->
+        <div id="tapeline"></div>
+    </div>
+</body>
+</html>

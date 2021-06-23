@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-variant: small-caps;
+        }
+
+        .item {
+            border: 1px solid #999;
+            border-radius:5px;
+            margin-bottom: 5px;
+            width: 350px;
+            height: 150px;
+            
+            overflow: hidden;
+        }
+
+        .item input[type=radio]{
+            display: none;
+        }
+
+        .item > .play + label {
+            display: block;
+            float: left;
+            width: 150px;
+            height: 150px;
+            font-variant: small-caps;
+            text-align: center;
+            font-weight: bold;
+            font-size: 3em;
+            /* border: 1px solid black; */
+            background-color: #eee;
+            cursor: pointer;
+            padding-top: 30px;
+        }
+
+        .play:checked + label{
+            background-color: tomato;
+            color: white;
+        }
+
+        .play:checked ~ img{
+            background-color: tomato;
+            color: white;
+
+            animation-name: turn;
+            animation-fill-mode: forwards;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .item > .play ~ img {
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            margin-left: 30px;
+        }
+
+        .item::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        @keyframes turn {
+            0% {
+
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex72.html -->
+    <div id="main">
+        <h1>Music</h1>
+        <div id="item1" class="item">
+            <input type="radio" id="play1" class="play" name="a">
+            <label for="play1">Play</label>
+            <img src="images/lp01.png">
+        </div>
+        <div id="item2" class="item">
+            <input type="radio" id="play2" class="play" name="a">
+            <label for="play2">Play</label>
+            <img src="images/lp02.png">
+        </div>
+        <div id="item3" class="item">
+            <input type="radio" id="play3" class="play" name="a">
+            <label for="play3">Play</label>
+            <img src="images/lp03.png">
+        </div>
+        <div id="item4" class="item">
+            <input type="radio" id="play4" class="play" name="a">
+            <label for="play4">Play</label>
+            <img src="images/lp04.png">
+        </div>
+    </div>
+</body>
+</html>
