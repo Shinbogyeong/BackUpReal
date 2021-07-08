@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 600px;
+            margin: auto;
+            /* border: 1px solid black; */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 600px;
+        }
+        
+        td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+
+        tr > td + td{
+            text-align: left;
+        }
+
+        input[type ="text"]{
+            width: 300px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>우편 번호 검색</h1>
+    
+    <table>
+        <tr>
+            <td>우편번호</td>
+            <td>
+                <input type="text" name="txtNum">
+                <input type="button" value="우편번호검사하기" name="btnCheck">
+            </td>
+        </tr>
+        <tr>
+            <td>주소</td>
+            <td>
+                <input type="text" name="txtAd">                
+            </td>
+        </tr>
+        <tr>
+            <td>상세주소</td>
+            <td>
+                <input type="text" name="txtDe">
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        var txtNum = document.all.txtNum;
+        var txtAd = document.all.txtAd;
+        var txtDe = document.all.txtDe;
+        var btnCheck = document.all.btnCheck;
+
+        btnCheck.onclick = function () {
+            window.open ("exam04_1.html", 'exam', 'width=300, left = 300px height=300')
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 600px;
+            margin: auto;
+        }
+        img {
+            /* width: 100px; */
+        }
+    </style>
+</head>
+<body>
+    <img src="images/catty01.png">
+    <img src="images/catty02.png">
+    <img src="images/catty03.png">
+    <img src="images/catty04.png">
+    <img src="images/catty05.png">
+    
+</body>
+<script>
+    var img = document.images;
+
+    
+    img[1].onmouseover = function (){
+        event.srcElement.width += 5;
+        // alert(event.srcElement.width);
+    }
+
+    
+    for (var i=0; i<img.length; i++){
+        img[i].onmouseover = function (){
+        event.srcElement.width += 5;
+        };
+    }
+    
+    for (var i=0; i<img.length; i++){
+        img[i].onclick = function (){
+        event.srcElement.width = 128;
+        };
+    }
+
+</script>
+</html>

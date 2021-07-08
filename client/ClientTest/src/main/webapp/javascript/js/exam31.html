@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            position: static;
+        }
+        #cat {
+            transition: all .5s;
+            transition-timing-function: linear;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/catty01.png" id="cat">
+    <script>
+
+        var cat = document.getElementById('cat');
+        window.onmousedown = function () {
+            // alert( event.clientX + 'px')
+            cat.style.left = event.clientX - 68 + 'px';
+            cat.style.top = event.clientY - 68 + 'px';
+        };
+
+
+    </script>
+</body>
+
+</html>

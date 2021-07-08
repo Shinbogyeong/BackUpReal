@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex54_style.html -->
+
+    <h1>뉴스</h1>
+    <fieldset>
+        <button type="button" id="big">크게</button>
+        <button type="button" id="small">작게</button>
+    </fieldset>
+    <p id="content">
+        여성가족부(여가부)가 매년 진행하는 성희롱·성폭력 예방 조치 평가에서 공군본부가 지난해 8월 받아든, 훌륭한 성적표다. 피해자를 상담할 담당자도 지정돼 있었고 상담창구, 예방지침도 마련돼 있었다. 전문강사의 성폭력 예방 프로그램들은 연초 계획대로 빠짐없이 진행됐고, 고위직들도 교육에 성실하게 참여했다.
+
+100점짜리 모범생 수준인 공군 성폭력 매뉴얼의 허상은 최근 부사관 성추행 피해 사망사건으로 여실히 드러났다. 이달 중순 진행된 현장점검의 결론은 '관련 규정과 매뉴얼은 있었지만, 사실상 없었던 것과 마찬가지였다'여서다. 매뉴얼 점검이 얼마나 '수박 겉핥기'인지 보여주는 셈이다.
+여성가족부(여가부)가 매년 진행하는 성희롱·성폭력 예방 조치 평가에서 공군본부가 지난해 8월 받아든, 훌륭한 성적표다. 피해자를 상담할 담당자도 지정돼 있었고 상담창구, 예방지침도 마련돼 있었다. 전문강사의 성폭력 예방 프로그램들은 연초 계획대로 빠짐없이 진행됐고, 고위직들도 교육에 성실하게 참여했다.
+
+100점짜리 모범생 수준인 공군 성폭력 매뉴얼의 허상은 최근 부사관 성추행 피해 사망사건으로 여실히 드러났다. 이달 중순 진행된 현장점검의 결론은 '관련 규정과 매뉴얼은 있었지만, 사실상 없었던 것과 마찬가지였다'여서다. 매뉴얼 점검이 얼마나 '수박 겉핥기'인지 보여주는 셈이다.
+    </p>
+
+
+    <script>
+        var big = document.getElementById('big');
+        var small = document.getElementById('small');
+        var content = document.getElementById('content');
+
+
+        big.onclick = function() {
+            //현재 크기?
+            // alert(window.getComputedStyle(content).fontSize);
+            var fontSize = parseInt(window.getComputedStyle(content).fontSize);
+
+            fontSize += 2;
+
+            content.style.fontSize = fontSize + 'px'
+        };
+
+        small.onclick = function() {
+            
+            var fontSize = parseInt(window.getComputedStyle(content).fontSize);
+
+            fontSize -= 2;
+
+            content.style.fontSize = fontSize + 'px'
+        };
+    </script>
+</body>
+</html>

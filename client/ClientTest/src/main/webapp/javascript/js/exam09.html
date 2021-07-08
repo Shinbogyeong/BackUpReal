@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table>
+        <tr>
+            <td>주민번호</td>
+            <td>
+                <input type="text" name ="first" maxlength="6" size="6"> -
+                <input type="text" name ="last"maxlength="6"size="6">
+            </td>
+        </tr>
+        <tr>
+            <td>생년월일</td>
+            <td>
+                <input type="text" name="year" maxlength="4" size="4">년
+                <input type="text" name="month" maxlength="2" size="4">월
+                <input type="text" name="date" maxlength="2" size="4">일
+            </td>
+        </tr>
+        <tr>
+            <td>성별</td>
+            <td>
+                <input type="radio" name="gender"> 남자
+                <input type="radio" name="gender"> 여자
+            </td>
+        </tr>
+    </table>
+    <script>
+        var first = document.all.first;
+        var last = document.all.last;
+        var year = document.all.year;
+        var month = document.all.month;
+        var date = document.all.date;
+        var gender = document.all.gender;
+        
+
+        
+        first.onkeyup = function () {
+            if (first.value.length == 6){
+                last.focus();
+                year.value = "19" + first.value.substr(0,2);
+                month.value = first.value.substr(2,2);
+                date.value = first.value.substr(4,2);
+                // alert( first.value.substr(2,2));
+            }
+            if (first.value.length > 6){
+                // first.value.length == 6;
+                alert('q');
+            }
+
+        }
+
+        first.onkeyup = function () {
+            if (first.value.length == 6){
+                last.focus();
+                year.value = "19" + first.value.substr(0,2);
+                month.value = first.value.substr(2,2);
+                date.value = first.value.substr(4,2);
+                // alert( first.value.substr(2,2));
+            }
+        }
+
+        last.onkeyup = function () {
+            if (last.value.length == 1){
+                if(last.value.substr(0,1) == 1){
+                    gender[0].checked = true;
+                } 
+                else {
+                    gender[1].checked = true;\
+                    gender[1].checked = true;
+
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>

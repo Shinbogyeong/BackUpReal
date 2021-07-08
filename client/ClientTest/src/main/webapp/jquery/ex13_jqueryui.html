@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <style>
+        .box { width: 200px; height: 200px; background-color: gold;}
+        .cat {border: 5px solid blue;}
+    </style>
+</head>
+<body>
+    <h1>jQeury UI < Interactions > Draggble</h1>
+
+    <img src="images/catty01.png" class="cat">
+
+    <div class="box"><img src="images/catty02.png" class="cat"> 상자</div>
+
+    <script>
+        // $('.box, .cat, h1').draggable();
+
+        //오브젝트
+        // $('.box').draggable({
+        //     axis: 'x'
+        // });
+
+        // $('.cat').draggable({
+        //     axis: 'y'
+        // });
+
+        // $('.box').draggable({
+        //     grid: [200, 200],
+        //     axis: 'x'
+        // });
+
+        // $('.cat').draggable({
+        //     snap: '.box'
+        // });
+
+        $('.box > img').draggable({
+            containment: 'parent'
+        });
+
+    </script>
+</body>
+</html>

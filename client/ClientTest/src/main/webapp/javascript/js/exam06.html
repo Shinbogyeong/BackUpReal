@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 200px;
+            margin: auto;
+            margin-top: 100px;
+        }
+        input {
+            width: 100px;
+        }
+
+        #txt1 {
+            border: 0px;
+            color: tomato;
+            width: 150px;
+            
+        }
+    </style>
+</head>
+<body>
+    <form>
+        아이디: <input type="text" name="txt">
+        <input type="text" name="txt1" id= "txt1" readOnly>
+    </form>
+    <script>
+        var txt = document.all.txt;
+        var txt1 = document.all.txt1;
+
+        // txt1.onclick = function() {
+        //     // alert(txt.value);
+        //     alert(txt.value.length );
+        // }
+
+        txt.onkeyup = function() {
+            if (txt.value.length >= 1 && txt.value.length < 5){
+                txt1.value = "아이디가 너무 짧습니다."
+            } else if (txt.value.length >= 5 && txt.value.length <= 10){
+                txt1.value = "아이디가 적합합니다."
+            } else if (txt.value.length >10 ){
+                txt1.value ="아이디가 너무 깁니다."
+            } else {
+                txt1.value =" "
+            }
+
+        }
+    </script>
+</body>
+</html>

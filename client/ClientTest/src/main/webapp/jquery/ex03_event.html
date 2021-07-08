@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <!-- ex03_event.html -->
+
+<!-- 
+    라이브러리와 프레임 워크의 차이는 자유도의 차이는
+    -> 주체?
+    개발자(라이브러리)
+    개발환경(프레임워크)
+
+    계산기 제작
+    -> 모든 설계 내가 직접 + 기능 50가지(10가지 직접 개발 + 40가지 가져다 사용(라이브러리))
+
+    계산기 제작 
+    -> 계산기 제작 툴(환경) - 마법사 10단계 + 기능 -> 팀원(개발자) 단계별 정해진 행동 구현 -->
+
+
+    <input type="button" value="버튼1" id="btn1" name="btn1" class="btn">
+    <input type="button" value="버튼2" id="btn2" name="btn2" class="btn">
+    <input type="button" value="버튼3" id="btn3" name="btn3" class="btn">
+
+    <script>
+
+        //이벤트
+
+        //1. BOM(정적)
+        // <input onclick="">
+
+        //2. BOM(동적)
+        // document.all.btn1.onclick = function() {};
+
+        //3. DOM
+        // document.getElementById('btn1').addEventListener('click' function(){});
+
+        //4. jQuery
+        //  a. 전용 이벤트 함수
+        //      - 객체.이벤트함수명(함수);
+        //  b. 범용 이벤트
+        //      - 객체.bind('이벤트명', 함수);
+        //      - 객체.live('이벤트명', 함수);
+        //      - 객체.on('이벤트명', 함수); (*****)
+
+        // a. 전용 이벤트 함수
+        // jQuery('#btn1').click(function() {
+            // alert('click');
+        // })
+
+        // b. 범용 이벤트
+        // jQuery('#btn2').on('click', function() {})
+
+
+        //3개의 버튼에 동시에 클릭 이벤트
+        // const btn = document.getElementsByClassName('btn');
+        
+        // for(let i=0; i<btn.length; i++){
+        //     btn[i].onclick = function() {
+        //         alert(btn[i].id)
+        //     }
+        // }
+
+
+        // jQuery('.btn').click(function() {
+        //     // alert(this.id); //** 가능
+        //     alert(event.srcElement.id);//가능
+        // });
+
+        //***jQuery는 객체를 조작할 때 프로퍼티를 사용하지 않는다.(프로퍼티 지양)
+        // -> 대부분의 기능을 메소드로 제공한다.
+        
+        // btn.onclick = fucntion() {}; //프로퍼티
+        // btn.click(function() {}); //함수
+
+        // btn.styel.color = 'red';
+        // btn.css('color', 'red')
+
+        // btn.innerText = '홍길동'
+        // btn.text('홍길동')
+    </script>
+
+
+</body>
+</html>

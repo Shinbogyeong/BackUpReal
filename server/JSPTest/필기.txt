@@ -1,0 +1,36 @@
+JSP, Java Server Pages
+- 자바를 사용해서 서버에 페이지를 만드는 기술
+- 클라이언트의 요청에 따라 서버에서 페이지를 동적으로 만드는 기술
+- Servlet 기술의 다음 버전
+
+Servlet 장점
+- Java를 사용한다.
+- 
+
+Servlet 단점
+- HTML, CSS, JavaScript 작성이 힘들다. > 모두 문자열 취급
+- Java 베이스 + 클라이언트 코드
+- Java 베이스 > 웹 요청 불가능 > 가상 주소 매핑(*.do)
+
+
+JSP 장점
+- HTML, CSS, JavaScript 작성이 쉽다.
+- HTML 베이스 + Java 코드 > 개발자 작업 편의성 높다.
+- HTML 베이스 > 웹 요청 가능 > 가상 주소 매핑 불필요.
+
+JSP 단점
+- HTML 베이스 > Java 작업 불편
+
+
+
+작업 파일
+1. src/main/javaa 요기서 만들어요~~
+	- [소스 폴더]
+	- 모든 패키지
+	- 모든 *.java
+	
+	
+2. src/main/webapp
+	- [루트 폴더] or [웹 루트 폴더] or [콘텐츠 루트 폴더]
+	- 모든 웹 페이지(*.html, *.css, *.js, 이미지, 동영상 등..)
+	- JSP 페이지(*.jsp)

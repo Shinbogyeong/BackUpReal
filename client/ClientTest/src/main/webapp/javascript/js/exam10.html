@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <div>차단된 친구</div>
+                <select name="no" size="10">
+                    <option>권준혁</option>
+                    <option>김동식</option>
+                    <option>김세진</option>
+                    <option>김여정</option>
+                    <option>노형준</option>
+                    <option>박민선</option>
+                    <option>백강현</option>
+                    <option>변기현</option>
+                </select>
+            </td>
+            <td>
+                <input type="button" name="btn1" value="Add">
+                <input type="button" name="btn2" value="Remove">
+                <input type="button" name="btn3" value="Add All">
+                <input type="button" name="btn4" value="Remove All">
+            </td>
+            <td>
+                <div>허용된 친구</div>
+                <select name="yes" size="10">
+            </td>
+        </tr>
+    </table>
+    <script>
+        var no = document.all.no;
+        var yes = document.all.yes;
+
+        var btn1 = document.all.btn1;
+        var btn2 = document.all.btn2;
+        var btn3 = document.all.btn3;
+        var btn4 = document.all.btn4;
+
+        btn1.onclick = function () {
+            // alert(no[no.selectedIndex].text);
+            
+            var op = new Option();
+            op.text = no[no.selectedIndex].text; 
+
+            yes.options.add(op);
+
+            no.options.remove(no.selectedIndex);
+                
+        }
+
+        btn2.onclick = function () {
+            // alert(no[no.selectedIndex].text);
+            
+            var op = new Option();
+            op.text = yes[yes.selectedIndex].text; 
+
+            no.options.add(op);
+
+            yes.options.remove(yes.selectedIndex);
+                
+        }
+
+        btn3.onclick = function() {};
+        btn4.onclick = function() {};
+    </script>
+</body>
+</html>

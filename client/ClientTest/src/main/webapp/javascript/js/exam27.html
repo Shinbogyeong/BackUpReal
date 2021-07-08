@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <!-- exam27.html -->
+    <script>
+
+        var num = 0;
+        var firstImage = null;
+
+        
+        window.onmousedown = function() {
+            var n = parseInt(Math.random() * 39) + 1;
+            var img = document.createElement('img');
+
+            
+            if (n < 10){
+                // alert('images/face0'+ n+ '.png');
+                img.setAttribute ('src', 'images/face0'+ n+ '.png');
+                
+            } else {
+                // alert('images/face'+ n+ '.png');
+                img.setAttribute ('src', 'images/face'+ n+'.png');
+            }
+            
+            img.style.left = event.clientX - (64)  + 'px';
+            img.style.top = event.clientY - (64) + 'px';
+
+
+            console.log(document.body.children, document.body.children.length)
+            document.body.appendChild(img);
+
+            // alert(document.body.children)
+            // console.log(document.body.children)
+            
+            for(var i=0; i<document.body.children.length; i++){
+                if(document.body.children[i].nodeName=='IMG' && firstImage == null){
+                    console.log(document.body.children[i].nodeName);
+                    firstImage = document.body.children[i];
+                }
+            }
+            if(num > 9){
+                document.body.removeChild(firstImage);
+                firstImage = null;
+            }
+            
+            num ++;
+        }
+
+        
+
+
+        
+    </script>
+</body>
+</html>

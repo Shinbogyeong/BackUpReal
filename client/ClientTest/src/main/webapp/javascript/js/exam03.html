@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 600px;
+            margin: auto ;
+            /* border: 1px solid #999; */
+            margin-top: 200px;
+
+        }
+
+        table {
+            border: 1px solid #999;
+            border-collapse: collapse;
+            width: 600px;
+            margin: auto 0px;
+        }
+        td {
+            border: 1px solid #999;
+        }
+
+        tr > td {
+            width: 100px;
+            text-align: center;
+        }
+
+        input {
+            padding: 5px 40px;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <input type="button" value="강아지1" name="btn">
+                <input type="button" value="강아지2" name="btn">
+                <input type="button" value="강아지3" name="btn">
+                <input type="button" value="강아지4" name="btn">
+                <input type="button" value="강아지5" name="btn">
+            </td>
+            <td><img src="images/dog01.jpg" name="img"></td>
+        </tr>
+    </table>
+
+    <script>
+        var btn = document.all.btn;
+        var img = document.images.img;
+
+        for (var i=0; i<btn.length; i++){
+            btn[i].onmouseover = function (){
+                img.src= "images/dog0" + event.srcElement.value.substring(3) + ".jpg";
+            }
+
+            btn[i].onclick = function () {
+                window.open("images/dog0" + event.srcElement.value.substring(3) + "_big.jpg", "width=1400, height=1050")
+            }
+        }
+
+        
+        
+    </script>
+</body>
+</html>

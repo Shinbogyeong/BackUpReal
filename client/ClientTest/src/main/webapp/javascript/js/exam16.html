@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 500px;
+            margin: auto;
+        }
+
+        input[type="text"]{
+            width: 500px;
+            font-size: 100px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            
+            text-align: center;
+        }
+
+        input[type ="button"]{
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="time" value = "00:00:00">
+    <input type="button" name="btn1" value="시작">
+    <input type="button" name="btn2" value="멈춤">
+    <input type="button" name="btn3" value="종료">
+
+    <script>
+        var time = document.all.time;
+        var btn1 = document.all.btn1;
+        var btn2 = document.all.btn2;
+        var btn3 = document.all.btn3;
+
+        var min = 0;
+        var sec = 0;
+        var milsec = 0;
+
+
+        var timer;
+
+
+        btn1.onclick = function () {
+            timer = setInterval(function() {
+
+                if(milsec==60){
+                    if(sec == 60){
+                        min +=1;
+                        sec = 0;
+                    } else {
+                        sec += 1;
+                        milsec = 0;
+                    }
+                } else {
+                    milsec++;
+                    
+                    time.value = format(min) + ":" + format(sec) + ":" + format(milsec);
+
+                }
+            }, 10);
+
+            btn1.disabled = true;
+            btn2.disabled = false;
+            btn3.disabled = false;
+        };
+
+        btn2.onclick = function () {
+            clearInterval(timer);
+            btn1.disabled = false;
+            btn2.disabled = true;
+        }
+
+        btn3.onclick = function () {
+            min = 0;
+            sec = 0;
+            milsec = 0;
+            time.value = "00:00:00"
+            clearInterval(timer);
+            btn1.disabled = false;
+            btn2.disabled = true;
+            btn3.disabled = true;
+        }
+
+        function format(i) {
+            if( i<10) {
+                return '0' + i;
+            }
+            return i;
+        }
+
+
+    </script>
+</body>
+</html>

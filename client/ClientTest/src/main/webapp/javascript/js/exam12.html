@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: auto;
+            width: 600px;
+        }
+        table {
+            border-collapse: collapse;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        td {
+            border: 1px solid #999;
+            
+        }
+
+        input[type="text"]{
+            width: 350px;
+        }
+
+        #txt {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr bgcolor="#eee">
+            <td >번호</td>
+            <td width="400px">입력</td>
+            <td>잠금</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><input type="text" name="txt" data-no="0"></td>
+            <td><input type="checkbox" name="ckb" data-no="0"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><input type="text" name="txt" data-no="1"o></td>
+            <td><input type="checkbox" name="ckb" data-no="1"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><input type="text" name="txt" data-no="2"></td>
+            <td><input type="checkbox" name="ckb" data-no="2"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><input type="text" name="txt" data-no="3"></td>
+            <td><input type="checkbox" name="ckb" data-no="3"></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><input type="text" name="txt" data-no="4"></td>
+            <td><input type="checkbox" name="ckb" data-no="4"></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><input type="text" name="txt" data-no="5"></td>
+            <td><input type="checkbox" name="ckb" data-no="5"></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td><input type="text" name="txt" data-no="6"></td>
+            <td><input type="checkbox" name="ckb" data-no="6"></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td><input type="text" name="txt" data-no="7"></td>
+            <td><input type="checkbox" name="ckb" data-no="7"></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td><input type="text" name="txt" data-no="8"></td>
+            <td><input type="checkbox" name="ckb" data-no="8"></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td><input type="text" name="txt" data-no="9"></td>
+            <td><input type="checkbox" name="ckb" data-no="9"></td>
+        </tr>
+    </table>
+
+    <script>
+        var txt = document.all.txt;
+        var ckb = document.all.ckb;
+
+        var no
+
+        for ( var i=0; i<txt.length; i++) {
+            ckb[i].onclick = function () {
+                if(event.srcElement.checked){
+                    txt[event.srcElement.dataset["no"]].disabled = true;
+                } else {
+                    txt[event.srcElement.dataset["no"]].disabled = false;
+                }
+                // alert(event.srcElement.dataset["no"]);
+                // txt[event.srcElement.dataset["no"]].disabled = true;
+            }
+        };
+
+        for(var i=0; i<txt.length; i++){
+            txt[i].onkeyup = function() {
+                // alert(event.keyCode);
+                if(event.keyCode == 13){
+                    txt[event.srcElement.dataset["no"]].disabled = true;
+                    ckb[event.srcElement.dataset["no"]].checked = true;   
+                }
+            };
+
+        }
+
+        for(var i=0; i<txt.length; i++){
+            txt[i].ondblclick = function() {
+                txt[event.srcElement.dataset["no"]].disabled = true;
+                ckb[event.srcElement.dataset["no"]].checked = true; 
+            };
+
+        }
+
+        
+
+    </script>
+</body>
+</html>

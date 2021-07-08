@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 500px;
+            margin: auto;
+        }
+        img {
+            border: 5px solid #aaa;
+            width: 100px;
+            margin: 10px;
+        }
+
+        input {
+            text-align: center;
+            border: 5px solid #aaa;
+            margin-left: 10px;
+            background-color: #eee;
+            padding: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/rect_icon01.png">
+    <img src="images/rect_icon02.png">
+    <img src="images/rect_icon03.png">
+    <img src="images/rect_icon04.png">
+    <img src="images/rect_icon05.png">
+    <img src="images/rect_icon06.png">
+    <img src="images/rect_icon07.png">
+    <img src="images/rect_icon08.png">
+    <img src="images/rect_icon09.png">
+
+    <div>
+    <input type="text" value="RESET" name="re" onclick = "reset();">
+    <input type="text" value="INPUT" name="input" onclick = "input();">
+    </div>
+    
+    <script>
+        var img = document.images;
+
+        var pw = "";
+
+        function getNum(src){
+            var index = src.lastIndexOf(".");
+            return src.substr(index-1, 1);
+            // alert(pw);
+        }
+
+        for (var i=0; i<img.length; i++){
+            img[i].onmouseover = function () {
+                pw += getNum(event.srcElement.src);
+                event.srcElement.src = "images/rect_icon10.png";
+                // alert(pw);
+            }
+        }
+
+        function reset() {
+            for (var i=0; i<img.length; i++) {
+                img[i].src = "images/rect_icon0"+ (i + 1)+".png";
+            }
+            pw ="";
+        }
+
+        function input() {
+            if(pw=="14789") {
+                location.href = "http://google.com";
+            } else {
+                alert("ERROR");
+                reset();
+            }
+        }
+        
+       
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    <style>
+        #box {
+            border: 10px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex04_effect.html -->
+
+    <h1>jQeury Effect - CSS 애니메이션(transition, animate)</h1>
+
+    <!-- input[type=button value=버튼$ id=btn$]*3 -->
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+    <input type="button" value="버튼3" id="btn3">
+    <hr>
+    <div id="box">상자</div>
+
+    <script>
+
+        // jQuery('#btn1')
+        // $('#bun1'): Alias
+        // console.log(jQuery == $); //true
+
+        $('#btn1').click(function() {
+
+            //jQuery Effect Function
+            //1. hide(time), show(time), toggle(time)(*****)
+            //2. fadeOut(), fadeIn(), fadeToggle()
+            //3. slideUp(), slideDown(), slideToggle()
+            //4. animate() : 사용자 정의(*****)
+
+            // $('#box').hide('slow'); //style=display : none
+            // $('#box').fadeOut(1000);
+            // $('#box').slideUp(1000);
+            
+            // $('#box').animate({
+            //     // width: '300px',
+            //     // height: '300px',
+            //     // width: 300
+            //     // width: '+=100px'
+
+            //     // width: 'toggle',
+            //     // height: 'toggle',
+            //     // opacity: 'toggle'
+
+            //     // transform: 'translate(100px, 200px)' 이거두개 지원안됨
+            //     // 'background-color': 'red'
+
+            // }, "1000");
+
+
+            // $('#box').hide(3000, function() {});
+            // $('#box').hide(function() {});
+            // $('#box').hide(3000);
+            // $('#box').hide();
+
+            //애니메이션 종료 후 실행 -> 콜백 함수
+            // $('#box').hide(3000, function() {
+            //     alert();
+            // });
+            // $('#box').hide(3000, function() {
+            //     alert();
+            // });
+
+            //애니메이션 진행과 시간을 맞춰서 실행하는 함수가 갂므 필요 -> 동기화
+            // $('#box').hide(3000);
+            // setTimeout(function() {
+            //     $('body').css('backfound-color', 'black');
+            // }, 3000)
+
+            //이렇게 사용 위에거 ㄴ ㄴ
+            // $('#box').hide(3000, function() {
+            //     $('body').css('background-color', 'black');
+            // });
+
+            //연쇄반응 구현..
+            // $('#box').hide(3000, function() {
+            //     $('#box').show(3000, function() {
+            //         $('#box').hide(3000);
+            //     })
+            // });
+
+            //jQuery 함수 중 일부는 실행 후 해당 객체를 반환하는 경우가 있다.
+            // -> 메소드 체이닝 구현 가능
+            // -> 동기화 제공(앞의 애니메이션이 진행 완료되기를 기다렸다가 뒤의 애니메이션을 진행)
+            $('#box').hide(1000)
+                    .show(1000)
+                    .fadeOut(1000)
+                    .fadeIn(1000)
+                    .slideUp(1000)
+                    .slideDown(1000)
+                    .animate({
+                        width: '+=200px'
+                    }, 1000)
+                    .animate({
+                        height: '-=100px'
+                    }, 1000)
+        });
+        
+        $('#btn2').click(function() {
+            // $('#box').show('fast');
+            // $('#box').fadeIn(1000);
+            // $('#box').slideDown(1000);
+            // $('#box').slideDown(1000);
+        })
+        
+        $('#btn3').click(function() {
+            // $('#box').toggle();
+            // $('#box').fadeToggle();
+            // $('#box').slideToggle(1000);
+        })
+
+
+        // $('#box').mouseover(function(){
+        //     $('#box').css('background-color', 'tomato');
+        // });
+        
+        // $('#box').mouseout(function(){
+        //     $('#box').css('background-color', 'gold');
+        // });
+        
+
+        //mouseover얘가 box를 반환함
+        // $('#box').mouseover(function(){
+        //             $('#box').css('background-color', 'tomato');
+        //         })
+        //         .mouseout(function(){
+        //             $('#box').css('background-color', 'gold');
+        //         });
+
+
+    // $('#box').on('mouseover', function() {});
+
+    //오브젝트로 들어가는걸 제일 많이 씀
+    $('#box').on({
+        mouseover: function() {
+            $('#box').css('background-color', 'tomato');
+        },
+        mouseout:function() {
+            $('#box').css('background-color', 'gold');
+        }
+    })
+
+    //위에랑 똑같음 
+    // var hong = {
+    //     name:'홍길동',
+    //     hello: function() {}
+    // }
+    </script>
+</body>
+</html>

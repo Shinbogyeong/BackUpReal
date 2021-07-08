@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+		width: 890px;
+		margin: 30px auto;
+	}
+	
+	#secret {
+		border: 1px solid #aaa;
+		border-radius: 5px;
+		background-color: #eee;
+		float: left;
+		width: 500px;
+	}
+	#desc {
+		float: left;
+		width: 350px;
+		padding-left: 30px;
+		color: #555;
+	}
+	
+	#desc li {
+		font-size: 16px;
+		margin-bottom: 5px;
+	}
+	
+	#secret #pw {
+		border: 1px dashed #aaa;
+		font-size: 4.5em;
+		color: #555;
+		width: 390px;
+		display: block;
+		margin: 30px auto;
+		padding: 10px;
+		padding-left: 40px;
+		letter-spacing: .85em;
+		outline: none;
+	}
+	
+	#secret #digit {
+		padding-left: 23px;
+		padding-bottom: 30px;
+	}
+	
+	#secret #digit input {
+		display: block;
+		float: left;
+		border: 1px solid #ccc;
+		font-size: 5.5em;
+		text-align: center;
+		color: #555;
+		padding: 10px;
+		width: 140px;
+		height: 140px;
+		margin: 5px;
+		text-shadow: -1px -1px 2px gray; 
+		background: white;/*  linear-gradient(#ccc, white, #ccc); */
+		outline: none;
+	}
+	
+	#secret #digit input:nth-last-child(2)
+		, #secret #digit input:nth-last-child(3) {
+		font-size: 2.5em;
+	}
+	
+    </style>
+</head>
+<body>
+    
+<div class="main m1000">
+	<div id="box">
+		<div id="secret">
+			<input type="text" id="pw" readonly maxlength="4">
+			<div id="digit">
+				<input type="button" value="7" name="num">
+				<input type="button" value="8" name="num">
+				<input type="button" value="9" name="num">
+				<input type="button" value="4" name="num">
+				<input type="button" value="5" name="num">
+				<input type="button" value="6" name="num">
+				<input type="button" value="1" name="num">
+				<input type="button" value="2" name="num">
+				<input type="button" value="3" name="num">
+				<input type="button" value="0" name="num">
+				<input type="button" value="del" name="del">
+				<input type="button" value="enter" name="enter">
+				<div style="clear:both;"></div>
+			</div>
+		</div>
+
+        <script>
+            var num = document.all.num;
+            var text = document.getElementById('pw');
+            var del = document.all.del;
+            var enter = document.all.enter;
+            var count = 0;
+
+            for(var i=0; i<num.length; i++){
+                num[i].onclick = function() {
+                    // alert(event.srcElement.value);
+                    
+                    if(text.value.length<4){
+                        text.value += event.srcElement.value;
+                        // alert(text.value.length);
+
+                    }
+                    
+                }
+            }
+
+            enter.onclick = function() {
+                if(count<2){
+                    if(text.value == '0425'){
+                        // alert('ㅇ');
+                        document.body.style.backgroundColor = 'cornflowerblue';
+                    } else {
+                        document.body.style.backgroundColor = '#FF8080';
+                        count ++;
+                    }
+                    
+                } else {
+                    document.body.style.backgroundColor = 'red';
+                    del.onclick = null;
+                    enter.onclick = null;
+
+                }
+            }
+
+            del.onclick = function() {
+                text.value = text.value.substr(0, text.value.length -1);
+
+            }
+
+
+
+        </script>
+</body>
+</html>

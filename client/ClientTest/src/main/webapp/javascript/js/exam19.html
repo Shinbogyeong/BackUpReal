@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #rect {
+            border: 1px solid gray;
+            width: 1000px;
+            padding: 10px;
+        }
+
+        #rect img {
+            width: 100px;
+            height: 120px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="rect">
+        <!-- <img src="images/1.png"> -->
+    </div>
+</body>
+<script>
+    var rect = document.getElementById('rect');
+
+    document.onkeydown = function () {
+
+        //0 -> 48
+        // alert(eventd.keyCode);
+
+        if(48 <= event.keyCode && event.keyCode<= 57){
+
+            var img = document.createElement('img');
+            img.setAttribute('src', "images/"+ (event.keyCode - 48)+".png");
+            rect.appendChild(img);
+            
+        }
+
+    }
+</script>
+</html>

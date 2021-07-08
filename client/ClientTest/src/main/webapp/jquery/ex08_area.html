@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    <style>
+        #box {
+            border: 10px solid black;
+            width: 200px; height: 200px;
+            padding: 20px;
+            margin: 15px;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex08_area.html -->
+    <h1>jQeury + Box Model(영역)</h1>
+
+    <div id="box"></div>
+
+    <script>
+
+        //상자 정보
+        console.log('width', $('#box').css('width')); //CSS 정보
+        console.log('height', $('#box').css('height')); 
+
+        //컨텐츠 영역의 크히
+        console.log('width()', $('#box').width()); //직접
+        // $('#box').width(500);//px 안붙혀도 됨
+        console.log('height()', $('#box').height()); //직접
+        // $('#box').height(500);//px 안붙혀도 됨
+
+        //컨텐츠 영역 + padding
+        console.log('innerWidth()', $('#box').innerHeight());
+        console.log('innerWidth()',$('#box').innerWidth());
+
+        //컨텐츠 영역 + padding + border : 시각적인 실제 상자 크기
+        console.log('outerWidth()', $('#box').outerWidth());
+        console.log('innerHeight()',$('#box').innerHeight());
+
+        //컨텐츠 영역 + padding + border + margin
+        console.log('outerWidth(true)', $('#box').outerWidth(true));
+        console.log('innerHeight(true)',$('#box').innerHeight(true));
+
+    </script>
+</body>
+</html>

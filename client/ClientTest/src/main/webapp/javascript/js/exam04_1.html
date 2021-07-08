@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="서울시 강남구 역삼동" name="btn1">
+    <input type="button" value="서울시 강남구 대치동" name="btn2">
+    <input type="button" value="서울시 강남구 도곡동" name="btn3">
+
+    <input type="button" value="서울시 강동구 길동" onclick="sel('05301')">
+
+    <script>
+
+        function sel(num,) {
+            opener.document.all.txtNum.value = num;
+            opener.document.all.txtAd.value = event.srcElement.value;
+            opener.document.all.txtDe.focus();
+            window.close();
+        }
+
+
+        var btn1 = document.all.btn1;
+        var btn2 = document.all.btn2;
+        var btn3 = document.all.btn3;
+
+        btn1.onclick = function () {
+            opener.document.all.txtNum.value = "06232";
+            opener.document.all.txtAd.value = btn1.value;
+            opener.document.all.txtDe.focus();
+            window.close();
+        }
+
+        btn2.onclick = function () {
+            opener.document.all.txtNum.value = "06291";
+            opener.document.all.txtAd.value = btn2.value;
+            opener.document.all.txtDe.focus();
+            window.close();
+        }
+
+        btn3.onclick = function () {
+            opener.document.all.txtNum.value = "06267";
+            opener.document.all.txtAd.value = btn3.value;
+            opener.document.all.txtDe.focus();
+            window.close();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <!-- exam26.html -->
+</body>
+
+<script>
+    // var isDown = false;
+
+    window.onmousedown = function() {
+        // if (isDown == false){
+            var img = document.createElement('img');
+            img.setAttribute('src', 'images/face03.png');
+            img.setAttribute('position', 'absolute');
+            img.style.left = event.clientX - (img.width/2)  + 'px';
+            img.style.top = event.clientY - (img.height/2) + 'px';
+
+
+            document.body.appendChild(img);
+            
+
+        // }
+        
+    }
+</script>
+</html>

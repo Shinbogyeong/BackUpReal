@@ -35,6 +35,10 @@
             4. onmouseup: 해당 객체 영역 위에서 마우스 버튼을 떼는 순간
             5. onmousemove: 해당 객체 영역 위에서 마우스 커서가 움직일때마다 발생
             6. onclick: 마우스 이벤트가 아니다!! 키보드를 사용해서 발생이 가능하다. 좌표를 얻어내지 못한다.
+            
+            더블클릭
+            sel1.ondblclick = function() {}
+
         */ 
 
         function m1() {
@@ -111,12 +115,15 @@
         }
 
 
-        window.document.all.cat.onmousedown = function() {
-            if (event.offsetX > 100 && event.offsetX < 125
-                && event.offsetY>70 && event.offsetY <100) {
-                    alert('거기는 고양이 코!')
-                }
-        }
+
+        window.document.all.cat1.onmousedown = function() {
+         
+         if (event.offsetX > 100 && event.offsetX < 125 
+               && event.offsetY > 70 && event.offsetY < 100) {
+                  alert('거기는 고양이 코!');
+               }
+         
+      };
 
         
     </script>

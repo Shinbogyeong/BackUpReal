@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex91_json.html -->
+
+    <script>
+
+        /*
+        
+        JSON, JavaScript Object Notation
+        - 객체 표기법
+        - 데이터 저장 or 테이터 전송 -> 표기법 중 하나 -> 대표 표기법(CSV, XML)
+        - 특정 언어 종속(X), 언어 독립적인 표기법(o)
+
+        JavaScript Object
+        {
+            name: '홍길동',
+            age: 20
+        }
+        {
+            'name': '홍길동',
+            'age': 20
+        }
+        {
+            "name": "홍길동",
+            "age": 20
+        }
+
+        JSON
+        - 반드시 프로퍼티를 쌍따옴표로 묶는다.
+        - 반드시 값도 쌍따옴표로 묶는다.(단, 숫자만 예외)
+        {
+            "name": "홍길동",
+            "age": 20
+        }
+        
+        */
+
+        const obj = { "name":"홍길동", "age":20};
+        const str = '{ "name":"홍길동", "age":20}'; //JSON 형식을 따라 표시한 문자열
+        const jobg = JSON.parse(str);
+
+        console.log(typeof obj) //object
+        console.log(obj.name);//홍길동
+
+        console.log(typeof str); //string
+        console.log(str.substr(10,3)); //홍길동
+        
+        console.log(typeof jobg); //object
+        console.log(jobg.name); //홍길동
+
+        //JavaScript -> 파일 읽기 불가능
+
+        //ajax of fetch
+        fetch('ex91.json').then(function(resp){
+            return resp.json()
+        }).then(function(data){
+
+            //ex91.json -> JavaScript Object
+            // console.log(data); //object임
+
+            console.log(data);
+            console.log('과정:', data.name);
+            console.log('개강일:', data.beginDate);
+            console.log('과목:');
+            data.subject.forEach(function(item){
+                console.log(item);
+            });
+            
+            data.info.student.forEach(function(item){
+                console.log(item);
+            });
+        })
+
+    </script>
+</body>
+</html>

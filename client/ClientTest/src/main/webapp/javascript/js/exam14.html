@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+    <style>
+        button {
+            width: 100px;
+            height: 100px;
+            font-size: 2.5em;
+            border: 0;
+            color: #444;
+
+        }
+
+        botton:enabled {
+            background-color: white;
+        }
+
+        button:disabled {
+            background-color: #bbb;
+        }
+
+
+    </style>
+</head>
+<body>
+    <button type="button" name="btn" disabled><i class="fas fa-dog"></i></button>
+    <button type="button" name="btn" disabled><i class="fas fa-paw"></i></button>
+    <button type="button" name="btn" disabled><i class="fas fa-bone"></i></button>
+    <button type="button" name="btn" disabled><i class="fas fa-frog"></i></button>
+    <button type="button" name="btn" disabled><i class="fas fa-cat"></i></button>
+    <button type="button" name="btn" disabled><i class="fas fa-piggy-bank"></i></button>
+    <button type="button" name="btn" disabled><i class="fas fa-horse"></i></button>
+    <button type="button" name="btn" disabled><i class="fas fa-dove"></i></button>
+    <button type="button" name="btn" disabled><i class="fas fa-drumstick-bite"></i></button>
+    <button type="button" name="btn" disabled><i class="fas fa-fish"></i></button>
+</body>
+
+<script>
+
+    var btn = document.all.btn;
+    var n = 0;
+
+
+    for (var i=0; i<btn.length; i++){
+        btn[i].onclick = function() {
+            document.body.bgColor = "cornflowerblue";
+            clearInterval(timer);
+        }
+    }
+
+    // btn[0].onclick = function() {
+    //     alert('d');
+    //     btn[0].disabled = false;
+    // }
+
+    var timer = setInterval(function() {
+        if(n<btn.length){
+            for(var i=0; i<btn.length; i++){
+                btn[i].disabled = true;
+            }
+
+            btn[n].disabled = false;
+            n++;
+            
+        } else {
+            n=0;
+        }
+
+    }, 100);
+</script>
+</html>
